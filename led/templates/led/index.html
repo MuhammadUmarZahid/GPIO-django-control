@@ -1,0 +1,12 @@
+{% if latest_poll_list %}
+    <ul>
+    {% for led in latest_poll_list %}
+        <li>{{led.name}}<a href="/leds/on/{{ led.id }}">ON</a><br><a href="/leds/off/{{ led.id }}">OFF</a></li>
+	<li>{{ led.stat }}</li>
+	<li>{{ led.change }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No leds are available.</p>
+{% endif %}
+
